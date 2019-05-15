@@ -19,10 +19,10 @@ void Player::move()
   for(size_t i = 0; i < dieResult; i++)
   {
     auto square = squareIterator->next();
-//    square->goThroughAction(this);
+    square->goThroughAction(this);
   }
 
-//  squareIterator->get().standAction(this);
+  squareIterator->get()->standOnAction(this);
 
   std::cout << name << ": ruszylem sie o " << dieResult << std::endl;
 }

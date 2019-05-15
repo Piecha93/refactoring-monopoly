@@ -5,6 +5,7 @@
 #ifndef REFACTORING_SQUARE_H
 #define REFACTORING_SQUARE_H
 
+#include "Player.h"
 
 class Square
 {
@@ -12,5 +13,6 @@ class Square
 public:
   Square();
 };
+
 
 #endif //REFACTORING_SQUARE_H

@@ -9,8 +9,6 @@
 #include <memory>
 #include "Square.h"
 
-class Board;
-
 class SquareIterator
 {
 private:

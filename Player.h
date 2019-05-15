@@ -7,6 +7,7 @@
 
 #include "Die.h"
 #include "Board.h"
+#include "SquareIterator.h"
 
 class Player
 {

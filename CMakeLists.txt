@@ -7,7 +7,8 @@ enable_testing()
 find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
 
-add_executable(refactoring main.cpp MonopolyGame.cpp MonopolyGame.h Player.cpp Player.h Board.cpp Board.h Square.cpp Square.h Die.cpp Die.h SquareIterator.cpp SquareIterator.h)
+add_executable(refactoring main.cpp MonopolyGame.cpp MonopolyGame.h Player.cpp Player.h Board.cpp Board.h
+        Square.h Die.cpp Die.h SquareIterator.cpp SquareIterator.h SquareDeposit.cpp SquareDeposit.h)
 
 
 
