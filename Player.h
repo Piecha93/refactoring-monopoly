@@ -13,13 +13,14 @@
 class Player
 {
 public:
-  explicit Player(std::shared_ptr<Board> board);
+  explicit Player(std::string name, std::shared_ptr<Board> board);
   void move();
 
 private:
   Die   die;
   std::unique_ptr<Piece> piece;
   std::shared_ptr<Board> board;
+  std::string name;
 
 };
 

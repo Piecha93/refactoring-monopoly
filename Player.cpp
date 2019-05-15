@@ -1,4 +1,6 @@
 #include <utility>
+
+#include <utility>
 #include <iostream>
 
 //
@@ -7,6 +9,11 @@
 
 #include "Player.h"
 
+Player::Player(std::string name, std::shared_ptr<Board> board) : name(std::move(name)), board(board)
+{
+  piece = std::make_unique<Piece>(board->getFirstSquare());
+}
+
 void Player::move()
 {
   auto dieResult = die.roll();
@@ -14,11 +21,6 @@ void Player::move()
 
   piece->setSquare(newSquare);
 
-  std::cout << "Ruszylem sie na " << piece->getSquare().lock()->getId() << std::endl;
-
+  std::cout << name << ": ruszylem sie o " << dieResult << std::endl;
 }
 
-Player::Player(std::shared_ptr<Board> board) : board(board)
-{
-  piece = std::make_unique<Piece>(board->getFirstSquare());
-}

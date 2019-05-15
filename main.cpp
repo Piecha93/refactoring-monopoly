@@ -11,9 +11,12 @@ int main()
 //  std::cin >> numOfPlayers;
   numOfPlayers = 4;
 
-  MonopolyGame monopolyGame(numOfPlayers);
+  MonopolyGame monopolyGame;
 
-  monopolyGame.mainLoop();
+  monopolyGame.addPlayer("Jeden");
+  monopolyGame.addPlayer("Dwa");
+
+  monopolyGame.startGame();
 
   return 0;
 }

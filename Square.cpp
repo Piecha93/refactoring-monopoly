@@ -5,12 +5,12 @@
 #include "Square.h"
 
 
-Square::Square(unsigned id) : id(id)
+Square::Square()
 {
 
 }
 
-unsigned Square::getId() const
-{
-  return id;
-}
+//unsigned Square::getId() const
+//{
+//  return id;
+//}

@@ -13,15 +13,18 @@
 class MonopolyGame
 {
 public:
-  MonopolyGame(int numOfPlayers);
+  MonopolyGame();
 
-  void mainLoop();
+  void startGame();
   void initGame();
+  void addPlayer(std::string name);
 
 
 private:
   std::vector<Player> players;
   unsigned currentPlayer = 0;
+
+  void gameLoop();
 
   std::shared_ptr<Board> board;
 };
