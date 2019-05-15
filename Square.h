@@ -8,7 +8,13 @@
 
 class Square
 {
+public:
+  Square(unsigned id);
 
+  unsigned getId();
+
+private:
+  unsigned id;
 };
 
 

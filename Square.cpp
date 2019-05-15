@@ -3,3 +3,14 @@
 //
 
 #include "Square.h"
+
+
+Square::Square(unsigned id) : id(id)
+{
+
+}
+
+unsigned Square::getId()
+{
+  return id;
+}

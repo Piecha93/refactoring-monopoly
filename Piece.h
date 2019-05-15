@@ -6,9 +6,20 @@
 #define REFACTORING_PIECE_H
 
 
+#include <memory>
+#include "Square.h"
+
 class Piece
 {
 
+public:
+  Piece(std::weak_ptr<Square> square);
+
+  std::weak_ptr<Square> getSquare();
+  void setSquare(std::weak_ptr<Square> square);
+
+private:
+  std::weak_ptr<Square> square;
 };
 
 

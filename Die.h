@@ -8,7 +8,10 @@
 
 class Die
 {
-
+public:
+  unsigned roll() {
+    return 4;
+  }
 };
 
 
