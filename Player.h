@@ -11,13 +11,12 @@
 class Player
 {
 public:
-  explicit Player(std::string name, std::shared_ptr<Board> board);
+  explicit Player(std::string name, std::unique_ptr<SquareIterator> squareIterator);
   void move();
 
 private:
   Die   die;
-  std::weak_ptr<Square> square;
-  std::shared_ptr<Board> board;
+  std::unique_ptr<SquareIterator> squareIterator;
   std::string name;
 
 };

@@ -17,7 +17,7 @@ void MonopolyGame::startGame()
 
 void MonopolyGame::addPlayer(std::string name)
 {
-  players.emplace_back(name, board);
+  players.emplace_back(name, board->getSquareIterator());
 }
 
 void MonopolyGame::gameLoop()

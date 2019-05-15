@@ -10,6 +10,8 @@
 #include <memory>
 #include "Square.h"
 
+#include "SquareIterator.h"
+
 class Board
 {
   static const unsigned numOfSquares = 40;
@@ -19,8 +21,10 @@ private:
 public:
   Board();
 
-  std::weak_ptr<Square> getFirstSquare();
-  std::weak_ptr<Square> getOffsetSquare(std::weak_ptr<Square> square, unsigned offset);
+  std::unique_ptr<SquareIterator> getSquareIterator()
+  {
+    return std::make_unique<SquareIterator>(squares);
+  }
 };
 
 

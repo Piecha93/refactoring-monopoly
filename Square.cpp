@@ -9,8 +9,3 @@ Square::Square()
 {
 
 }
-
-//unsigned Square::getId() const
-//{
-//  return id;
-//}

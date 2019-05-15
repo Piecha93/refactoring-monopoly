@@ -22,7 +22,6 @@ public:
 
 private:
   std::vector<Player> players;
-  unsigned currentPlayer = 0;
 
   void gameLoop();
 

@@ -13,15 +13,4 @@ public:
   Square();
 };
 
-
-//  unsigned getId() const;
-
-//private:
-//  unsigned id;
-
-
-//inline bool operator==(const Square& lhs, const Square& rhs) {
-//  return lhs.getId() == rhs.getId();
-//}
-
 #endif //REFACTORING_SQUARE_H

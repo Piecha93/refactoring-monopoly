@@ -9,15 +9,20 @@
 
 #include "Player.h"
 
-Player::Player(std::string name, std::shared_ptr<Board> board) : name(std::move(name)), board(board)
+Player::Player(std::string name, std::unique_ptr<SquareIterator> squareIterator) : name(std::move(name)), squareIterator(std::move(squareIterator))
 {
-  square = board->getFirstSquare();
 }
 
 void Player::move()
 {
   auto dieResult = die.roll();
-  square = board->getOffsetSquare(square ,dieResult);
+  for(size_t i = 0; i < dieResult; i++)
+  {
+    auto square = squareIterator->next();
+//    square->goThroughAction(this);
+  }
+
+//  squareIterator->get().standAction(this);
 
   std::cout << name << ": ruszylem sie o " << dieResult << std::endl;
 }
