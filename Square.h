@@ -9,9 +9,10 @@
 
 class Square
 {
-
 public:
-  Square();
+  Square() {}
+  virtual void standOnAction(Player &player) = 0;
+  virtual void goThroughAction(Player &player) = 0;
 };
 
 

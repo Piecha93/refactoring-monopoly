@@ -7,7 +7,8 @@
 
 #include <vector>
 #include <memory>
-#include "Square.h"
+
+class Square;
 
 class SquareIterator
 {

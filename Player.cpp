@@ -19,6 +19,7 @@ void Player::move()
   for(size_t i = 0; i < dieResult; i++)
   {
     auto square = squareIterator->next();
+
     square->goThroughAction(this);
   }
 
@@ -27,3 +28,10 @@ void Player::move()
   std::cout << name << ": ruszylem sie o " << dieResult << std::endl;
 }
 
+void Player::changeCredit(int changeBy) {
+  credit += changeBy;
+}
+
+bool Player::isBankrupt() {
+  return credit <= 0;
+}
