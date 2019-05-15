@@ -2,8 +2,7 @@
 #include "MonopolyGame.h"
 
 
-int main()
-{
+int main() {
   int numOfPlayers;
 
   std::cout << "Podaj liczbe graczy\n";

@@ -10,22 +10,18 @@
 #include "Player.h"
 #include "Die.h"
 
-class MonopolyGame
-{
+class MonopolyGame {
 public:
-  MonopolyGame();
+    MonopolyGame();
 
-  void startGame();
-  void initGame();
-  void addPlayer(std::string name);
-
+    void startGame();
+    void addPlayer(std::string name);
 
 private:
-  std::vector<Player> players;
+    std::shared_ptr<Board> board;
+    std::vector<Player> players;
 
-  void gameLoop();
-
-  std::shared_ptr<Board> board;
+    void gameLoop();
 };
 
 

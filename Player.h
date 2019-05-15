@@ -6,21 +6,24 @@
 #define REFACTORING_PLAYER_H
 
 #include "Die.h"
-#include "SquareIterator.h"
+#include "squares/SquareIterator.h"
 
-class Player
-{
+class Player {
 public:
-  explicit Player(std::string name, std::unique_ptr<SquareIterator> squareIterator);
-  void move();
-  void changeCredit(int changeBy);
-  bool isBankrupt();
+    explicit Player(std::string name, SquareIterator squareIterator);
+
+    void move();
+
+    void changeCredit(int changeBy);
+    bool isBankrupt();
+    int getCredit();
+    std::string getName();
 
 private:
-  Die   die;
-  std::unique_ptr<SquareIterator> squareIterator;
-  std::string name;
-  int credit;
+    Die die;
+    SquareIterator squareIterator;
+    std::string name;
+    int credit;
 
 };
 

@@ -8,7 +8,8 @@ find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
 
 add_executable(refactoring main.cpp MonopolyGame.cpp MonopolyGame.h Player.cpp Player.h Board.cpp Board.h
-        Square.h Die.cpp Die.h SquareIterator.cpp SquareIterator.h SquareDeposit.cpp SquareDeposit.h)
+        squares/Square.h Die.cpp Die.h squares/SquareIterator.cpp squares/SquareIterator.h squares/SquareDeposit.cpp squares/SquareDeposit.h squares/SquareCash.h
+        squares/SquareCash.cpp squares/SquareStart.h squares/SquareStart.cpp)
 
 
 

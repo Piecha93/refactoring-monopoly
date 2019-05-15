@@ -5,27 +5,23 @@
 #include <iostream>
 #include "MonopolyGame.h"
 
-MonopolyGame::MonopolyGame()
-{
+MonopolyGame::MonopolyGame() {
   board = std::make_shared<Board>();
 }
 
-void MonopolyGame::startGame()
-{
+void MonopolyGame::startGame() {
   gameLoop();
 }
 
-void MonopolyGame::addPlayer(std::string name)
-{
+void MonopolyGame::addPlayer(std::string name) {
   players.emplace_back(name, board->getSquareIterator());
 }
 
-void MonopolyGame::gameLoop()
-{
+void MonopolyGame::gameLoop() {
 //  while (players.size() > 1)
+  for(size_t i = 0; i < 150; i++)
   {
-    for (auto &player : players)
-    {
+    for (auto &player : players) {
       player.move();
     }
   }

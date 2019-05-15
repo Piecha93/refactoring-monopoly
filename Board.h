@@ -8,23 +8,19 @@
 
 #include <vector>
 #include <memory>
-#include "Square.h"
+#include "squares/Square.h"
 
-#include "SquareIterator.h"
+#include "squares/SquareIterator.h"
 
-class Board
-{
-  static const unsigned numOfSquares = 40;
+class Board {
+    static const unsigned numOfSquares = 40;
 private:
-  std::vector<std::shared_ptr<Square>> squares;
+    std::vector<std::shared_ptr<Square>> squares;
 
 public:
-  Board();
+    Board();
 
-  std::unique_ptr<SquareIterator> getSquareIterator()
-  {
-    return std::make_unique<SquareIterator>(squares);
-  }
+    SquareIterator getSquareIterator();
 };
 
 #endif //REFACTORING_BOARD_H
