@@ -11,15 +11,13 @@
 
 Player::Player(std::string name, std::shared_ptr<Board> board) : name(std::move(name)), board(board)
 {
-  piece = std::make_unique<Piece>(board->getFirstSquare());
+  square = board->getFirstSquare();
 }
 
 void Player::move()
 {
   auto dieResult = die.roll();
-  auto newSquare = board->getOffsetSquare(piece->getSquare() ,dieResult);
-
-  piece->setSquare(newSquare);
+  square = board->getOffsetSquare(square ,dieResult);
 
   std::cout << name << ": ruszylem sie o " << dieResult << std::endl;
 }

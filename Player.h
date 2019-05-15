@@ -5,8 +5,6 @@
 #ifndef REFACTORING_PLAYER_H
 #define REFACTORING_PLAYER_H
 
-
-#include "Piece.h"
 #include "Die.h"
 #include "Board.h"
 
@@ -18,7 +16,7 @@ public:
 
 private:
   Die   die;
-  std::unique_ptr<Piece> piece;
+  std::weak_ptr<Square> square;
   std::shared_ptr<Board> board;
   std::string name;
 
