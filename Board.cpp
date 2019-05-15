@@ -20,6 +20,9 @@ std::weak_ptr<Square> Board::getFirstSquare()
 
 std::weak_ptr<Square> Board::getOffsetSquare(std::weak_ptr<Square> square, unsigned offset)
 {
-  unsigned newIndex = (square.lock()->getId() + offset) % Board::numOfSquares;
+  auto it = std::find(squares.begin(), squares.end(), square.lock());
+  auto index = std::distance(squares.begin(), it);
+  auto newIndex = (index + offset) % Board::numOfSquares;
+
   return squares[newIndex];
 }

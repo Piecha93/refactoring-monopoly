@@ -9,15 +9,16 @@
 
 void Player::move()
 {
-  std::cout << "asd";
   auto dieResult = die.roll();
-  board->getOffsetSquare(piece->getSquare() ,dieResult);
+  auto newSquare = board->getOffsetSquare(piece->getSquare() ,dieResult);
 
-  std::cout << "Ruszylem sie na " << piece->getSquare().lock()->getId();
+  piece->setSquare(newSquare);
+
+  std::cout << "Ruszylem sie na " << piece->getSquare().lock()->getId() << std::endl;
 
 }
 
-Player::Player(std::shared_ptr<Board> board) : board(std::move(board))
+Player::Player(std::shared_ptr<Board> board) : board(board)
 {
   piece = std::make_unique<Piece>(board->getFirstSquare());
 }

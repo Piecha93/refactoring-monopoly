@@ -10,7 +10,7 @@ Square::Square(unsigned id) : id(id)
 
 }
 
-unsigned Square::getId()
+unsigned Square::getId() const
 {
   return id;
 }

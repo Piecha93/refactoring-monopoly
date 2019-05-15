@@ -13,7 +13,7 @@ int main()
 
   MonopolyGame monopolyGame(numOfPlayers);
 
-//  monopolyGame.mainLoop();
+  monopolyGame.mainLoop();
 
   return 0;
 }

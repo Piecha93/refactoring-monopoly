@@ -7,12 +7,11 @@
 
 MonopolyGame::MonopolyGame(int numOfPlayers)
 {
-  std::cout << "BBBBB";
   board = std::make_shared<Board>();
 
   for (int i = 0; i < numOfPlayers; i++)
   {
-    players.push_back(Player(board));
+    players.emplace_back(board);
   }
 
 }
@@ -26,7 +25,6 @@ void MonopolyGame::initGame()
 
 void MonopolyGame::mainLoop()
 {
-  std::cout << "AAAAA";
 //  while (players.size() > 1)
   {
     for (auto &player : players)
