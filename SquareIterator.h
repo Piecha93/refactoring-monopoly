@@ -8,7 +8,7 @@
 #include <vector>
 #include <memory>
 
-class Square;
+#include "Square.h"
 
 class SquareIterator
 {

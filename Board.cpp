@@ -9,6 +9,7 @@ Board::Board()
 {
   for(unsigned i = 0; i < Board::numOfSquares; i++)
   {
-    squares.push_back(std::make_shared<Square>());
+    squares.push_back(std::shared_ptr<Square>());
   }
 }
+

@@ -3,6 +3,7 @@
 //
 
 #include "SquareDeposit.h"
+#include "Player.h"
 
 void SquareDeposit::standOnAction(Player &player) {
 

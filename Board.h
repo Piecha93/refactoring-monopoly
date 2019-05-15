@@ -27,5 +27,4 @@ public:
   }
 };
 
-
 #endif //REFACTORING_BOARD_H

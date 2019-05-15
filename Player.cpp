@@ -20,10 +20,10 @@ void Player::move()
   {
     auto square = squareIterator->next();
 
-    square->goThroughAction(this);
+    square->goThroughAction(*this);
   }
 
-  squareIterator->get()->standOnAction(this);
+  squareIterator->get()->standOnAction(*this);
 
   std::cout << name << ": ruszylem sie o " << dieResult << std::endl;
 }

@@ -5,7 +5,7 @@
 #ifndef REFACTORING_SQUARE_H
 #define REFACTORING_SQUARE_H
 
-#include "Player.h"
+class Player;
 
 class Square
 {
