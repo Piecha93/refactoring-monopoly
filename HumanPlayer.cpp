@@ -14,7 +14,9 @@ HumanPlayer::HumanPlayer(std::string name, SquareIterator squareIterator) : Play
 
 bool HumanPlayer::makeBuyDecision(unsigned price)
 {
-  std::cout << "Do You want to buy property for " << price << "? (Y/N) You have " << getCredit() << " zl" << std::endl;
+  std::cout << "Do You want to buy property for " << price << "? (Y/N) You have "
+  << getCredit() << " zl" << std::endl;
+
   std::string decision;
   std::cin >> decision;
 
