@@ -12,6 +12,7 @@
 #include "squares/SquareProperty.hpp"
 #include "squares/SquareStart.h"
 #include "squares/SquareTax.h"
+#include <sstream>
 
 Board::Board() {
   squares.push_back(std::make_shared<SquareStart>(500));
@@ -23,8 +24,11 @@ Board::Board() {
     } else if (i % 10 == 7) {
       squares.push_back(std::make_shared<SquareCash>(100));
     } else {
+      std::stringstream ss;
+      ss << "name" << i;
+      std::string s = ss.str();
       squares.push_back(
-          std::make_shared<SquareProperty>(std::strcat("name", std::to_string(i)), i * 10, i * 10 / 2));
+          std::make_shared<SquareProperty>(ss.str(), i * 10, i * 10 / 2));
     }
   }
 }
