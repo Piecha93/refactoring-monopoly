@@ -5,14 +5,14 @@
 #ifndef REFACTORING_SQUARE_H
 #define REFACTORING_SQUARE_H
 
-#include "../Player.h"
+#include "../PlayerState.h"
 
 class Square {
 public:
     Square() = default;
 
-    virtual void standOnAction(Player &player) = 0;
-    virtual void goThroughAction(Player &player) = 0;
+    virtual void standOnAction(PlayerState &player) = 0;
+    virtual void goThroughAction(PlayerState &player) = 0;
 
     virtual ~Square() = default;
 };

@@ -5,9 +5,9 @@
 #ifndef REFACTORING_HUMANPLAYER_H
 #define REFACTORING_HUMANPLAYER_H
 
-#include "Player.h"
+#include "PlayerState.h"
 
-class HumanPlayer : public Player {
+class HumanPlayer : public PlayerState {
 public:
   HumanPlayer() = delete;
   HumanPlayer(std::string name, SquareIterator squareIterator);

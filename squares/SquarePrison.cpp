@@ -5,13 +5,13 @@
 #include <iostream>
 #include "SquarePrison.hpp"
 
-void SquarePrison::standOnAction(Player &player) {
+void SquarePrison::standOnAction(PlayerState &player) {
   std::cout<<"player is prisoned for 3 moves";
-  player.imprison(lengthOtImprisonment);
+  player.imprison(lengthOfImprisonment);
 }
 
-void SquarePrison::goThroughAction(Player &player) {
+void SquarePrison::goThroughAction(PlayerState &player) {
 
 }
 
-SquarePrison::SquarePrison(unsigned int lengthOtImprisonment) : lengthOtImprisonment(lengthOtImprisonment) {}
+SquarePrison::SquarePrison(unsigned int lengthOtImprisonment) : lengthOfImprisonment(lengthOtImprisonment) {}

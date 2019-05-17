@@ -8,9 +8,9 @@
 #include "Die.h"
 #include "squares/SquareIterator.h"
 
-class Player {
+class PlayerState {
 public:
-  explicit Player(std::string name, SquareIterator squareIterator);
+  explicit PlayerState(std::string name, SquareIterator squareIterator);
 
   void addCredit(unsigned value);
   void decCredit(unsigned value);
@@ -24,7 +24,7 @@ public:
 
   virtual bool makeBuyDecision(unsigned price) = 0;
 
-  virtual ~Player() {}
+  virtual ~PlayerState() {}
 
 private:
   bool isPrisoned();

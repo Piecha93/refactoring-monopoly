@@ -10,20 +10,20 @@
 class SquareProperty : public Square {
 public:
   SquareProperty(const std::string &name, int value, int visitCost);
-  void standOnAction(Player &player) override;
-  void goThroughAction(Player &player) override;
+  void standOnAction(PlayerState &player) override;
+  void goThroughAction(PlayerState &player) override;
 
 private:
-  bool isOwner(Player &player);
-  void offerPurchase(Player &player);
+  bool isOwner(PlayerState &player);
+  void offerPurchase(PlayerState &player);
 
   std::string name;
   int price;
   int visitCost;
-  Player *owner;
+  PlayerState *owner;
   bool isBought = false;
 
-  bool hasPlayerMoneyToBuy(const Player &player) const;
+  bool hasPlayerMoneyToBuy(const PlayerState &player) const;
 };
 
 #endif // REFACTORING_SQUAREPROPERTY_HPP

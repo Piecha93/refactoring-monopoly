@@ -9,12 +9,12 @@ SquareTax::SquareTax(unsigned ammount) : ammount(ammount) {
 
 }
 
-void SquareTax::standOnAction(Player &player) {
+void SquareTax::standOnAction(PlayerState &player) {
   std::cout << "Player " << player.getName() << " paid tax " << ammount << std::endl;
   player.decCredit(ammount);
 }
 
-void SquareTax::goThroughAction(Player &player) {
+void SquareTax::goThroughAction(PlayerState &player) {
 
 }
 

@@ -9,7 +9,7 @@ SquareProperty::SquareProperty(const std::string &name, int value,
                                int visitCost)
         : name(name), price(value), visitCost(visitCost) {}
 
-void SquareProperty::standOnAction(Player &player) {
+void SquareProperty::standOnAction(PlayerState &player) {
   if (isBought) {
     if (!isOwner(player)) {
       player.decCredit(visitCost);
@@ -20,9 +20,9 @@ void SquareProperty::standOnAction(Player &player) {
   }
 }
 
-void SquareProperty::goThroughAction(Player &player) {}
+void SquareProperty::goThroughAction(PlayerState &player) {}
 
-void SquareProperty::offerPurchase(Player &player) {
+void SquareProperty::offerPurchase(PlayerState &player) {
 
   if (hasPlayerMoneyToBuy(player) && player.makeBuyDecision(price)) {
     isBought = true;
@@ -31,9 +31,9 @@ void SquareProperty::offerPurchase(Player &player) {
   }
 }
 
-bool SquareProperty::hasPlayerMoneyToBuy(const Player &player) const
+bool SquareProperty::hasPlayerMoneyToBuy(const PlayerState &player) const
 { return player.getCredit() >= price; }
 
-bool SquareProperty::isOwner(Player &player) {
+bool SquareProperty::isOwner(PlayerState &player) {
   return owner->getName() == player.getName();
 }

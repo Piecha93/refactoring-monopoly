@@ -7,7 +7,7 @@
 #include <iostream>
 #include "HumanPlayer.h"
 
-HumanPlayer::HumanPlayer(std::string name, SquareIterator squareIterator) : Player(std::move(name), squareIterator)
+HumanPlayer::HumanPlayer(std::string name, SquareIterator squareIterator) : PlayerState(std::move(name), squareIterator)
 {
 
 }

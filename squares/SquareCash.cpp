@@ -8,11 +8,11 @@ SquareCash::SquareCash(unsigned ammount) : ammount(ammount) {
 
 }
 
-void SquareCash::standOnAction(Player &player) {
+void SquareCash::standOnAction(PlayerState &player) {
   std::cout << "Player " << player.getName() << " received " << ammount << std::endl;
   player.addCredit(ammount);
 }
 
-void SquareCash::goThroughAction(Player &player) {
+void SquareCash::goThroughAction(PlayerState &player) {
 
 }

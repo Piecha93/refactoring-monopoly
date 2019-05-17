@@ -7,13 +7,13 @@
 // Created by tpiecha on 15.05.2019.
 //
 
-#include "Player.h"
+#include "PlayerState.h"
 #include "squares/Square.h"
 
-Player::Player(std::string name, SquareIterator squareIterator)
+PlayerState::PlayerState(std::string name, SquareIterator squareIterator)
     : name(std::move(name)), squareIterator(squareIterator) {}
 
-void Player::makeTurn() {
+void PlayerState::makeTurn() {
   if (!isPrisoned()) {
     move();
   } else {
@@ -21,7 +21,7 @@ void Player::makeTurn() {
   }
 }
 
-void Player::move() {
+void PlayerState::move() {
   auto dieResult = this->die.roll();
 
   std::cout << this->name << ": move " << dieResult << " squares " << std::endl;
@@ -37,18 +37,18 @@ void Player::move() {
   this->squareIterator.get()->standOnAction(*this);
 }
 
-void Player::addCredit(unsigned value) { credit += value; }
+void PlayerState::addCredit(unsigned value) { credit += value; }
 
-void Player::decCredit(unsigned value) { credit -= value; }
+void PlayerState::decCredit(unsigned value) { credit -= value; }
 
-bool Player::isBankrupt() { return credit < 0; }
+bool PlayerState::isBankrupt() { return credit < 0; }
 
-std::string Player::getName() const { return name; }
+std::string PlayerState::getName() const { return name; }
 
-int Player::getCredit() const { return credit; }
+int PlayerState::getCredit() const { return credit; }
 
-void Player::imprison(unsigned lengthOfImprisonment) {
+void PlayerState::imprison(unsigned lengthOfImprisonment) {
   timeToReleasePrison = lengthOfImprisonment;
 }
 
-bool Player::isPrisoned() { return timeToReleasePrison > 0; }
+bool PlayerState::isPrisoned() { return timeToReleasePrison > 0; }

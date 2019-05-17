@@ -15,8 +15,8 @@ public:
   SquareTax() = delete;
   SquareTax(unsigned ammount);
 
-  void standOnAction(Player &player) override;
-  void goThroughAction(Player &player) override;
+  void standOnAction(PlayerState &player) override;
+  void goThroughAction(PlayerState &player) override;
 
 };
 

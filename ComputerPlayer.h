@@ -5,14 +5,14 @@
 #ifndef REFACTORING_COMPUTERPLAYER_H
 #define REFACTORING_COMPUTERPLAYER_H
 
-#include "Player.h"
+#include "PlayerState.h"
 
 enum class ComputerPlayerMode {
   Greedy,
   Random
 };
 
-class ComputerPlayer : public Player {
+class ComputerPlayer : public PlayerState {
 private:
   ComputerPlayerMode mode;
 public:

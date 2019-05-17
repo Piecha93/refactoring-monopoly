@@ -9,7 +9,7 @@
 ComputerPlayer::ComputerPlayer(std::string name,
                                SquareIterator squareIterator,
                                const ComputerPlayerMode &mode) :
-                               Player(std::move(name), squareIterator), mode(mode)
+                               PlayerState(std::move(name), squareIterator), mode(mode)
 {
 
 }

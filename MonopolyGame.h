@@ -8,7 +8,7 @@
 #include <memory>
 #include "ComputerPlayer.h"
 #include "Board.h"
-#include "Player.h"
+#include "PlayerState.h"
 #include "Die.h"
 
 class MonopolyGame {
@@ -21,7 +21,7 @@ public:
 
 private:
     Board board;
-    std::vector<std::shared_ptr<Player>> players;
+    std::vector<std::shared_ptr<PlayerState>> players;
 
     void gameLoop();
 

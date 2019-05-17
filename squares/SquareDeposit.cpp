@@ -4,16 +4,16 @@
 
 #include <iostream>
 #include "SquareDeposit.h"
-#include "../Player.h"
+#include "../PlayerState.h"
 
-void SquareDeposit::standOnAction(Player &player) {
+void SquareDeposit::standOnAction(PlayerState &player) {
   std::cout << "Player " << player.getName() << " took " << depositValue << " from deposit" << std::endl;
 
   player.addCredit(depositValue);
   depositValue = 0;
 }
 
-void SquareDeposit::goThroughAction(Player &player) {
+void SquareDeposit::goThroughAction(PlayerState &player) {
   std::cout << "Player " << player.getName() << " paid " << 200 << " to deposit" << std::endl;
   player.decCredit(200);
   depositValue += 200;
