@@ -8,11 +8,11 @@
 #include "Square.h"
 
 class SquareStart : public Square {
-  int startBonus;
+  unsigned startBonus;
 public:
   SquareStart() = delete;
 
-  explicit SquareStart(int startBonus);
+  explicit SquareStart(unsigned startBonus);
 
   void standOnAction(Player &player) override;
   void goThroughAction(Player &player) override;

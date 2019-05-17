@@ -4,13 +4,13 @@
 
 #include "SquareCash.h"
 
-SquareCash::SquareCash(int ammount) : ammount(ammount) {
+SquareCash::SquareCash(unsigned ammount) : ammount(ammount) {
 
 }
 
 void SquareCash::standOnAction(Player &player) {
   std::cout << "Player " << player.getName() << " received " << ammount << std::endl;
-  player.changeCredit(ammount);
+  player.addCredit(ammount);
 }
 
 void SquareCash::goThroughAction(Player &player) {

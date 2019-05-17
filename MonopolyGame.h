@@ -18,10 +18,12 @@ public:
     void addPlayer(std::string name);
 
 private:
-    std::shared_ptr<Board> board;
+    Board board;
     std::vector<Player> players;
 
     void gameLoop();
+
+  void printResults() const;
 };
 
 

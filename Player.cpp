@@ -17,7 +17,7 @@ Player::Player(std::string name, SquareIterator squareIterator) : name(std::move
 void Player::move() {
   auto dieResult = die.roll();
 
-  std::cout << name << ": ruszam sie o " << dieResult << std::endl;
+  std::cout << name << ": move " << dieResult << " squares " << std::endl;
 
   for (size_t i = 0; i < dieResult; i++) {
     auto square = squareIterator.next();
@@ -28,22 +28,24 @@ void Player::move() {
   }
 
   squareIterator.get()->standOnAction(*this);
-
-  std::cout << std::endl;
 }
 
-void Player::changeCredit(int changeBy) {
-  credit += changeBy;
+void Player::addCredit(unsigned value) {
+  credit += value;
+}
+
+void Player::decCredit(unsigned value) {
+  credit -= value;
 }
 
 bool Player::isBankrupt() {
-  return credit <= 0;
+  return credit < 0;
 }
 
-std::string Player::getName() {
+std::string Player::getName() const {
   return name;
 }
 
-int Player::getCredit() {
+int Player::getCredit() const {
   return credit;
 }

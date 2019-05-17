@@ -5,7 +5,7 @@
 #include <iostream>
 #include "SquareStart.h"
 
-SquareStart::SquareStart(int startBonus) : startBonus(startBonus) {
+SquareStart::SquareStart(unsigned startBonus) : startBonus(startBonus) {
 
 }
 
@@ -15,5 +15,5 @@ void SquareStart::standOnAction(Player &player) {
 
 void SquareStart::goThroughAction(Player &player) {
   std::cout << "Player " << player.getName() << " go through start and get " << startBonus << std::endl;
-  player.changeCredit(startBonus);
+  player.addCredit(startBonus);
 }

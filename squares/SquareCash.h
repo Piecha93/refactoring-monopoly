@@ -10,12 +10,11 @@
 
 class SquareCash : public Square {
 private:
-    int ammount;
+  unsigned ammount;
+
 public:
-
     SquareCash() = delete;
-
-    SquareCash(int ammount);
+    SquareCash(unsigned ammount);
 
     void standOnAction(Player &player) override;
     void goThroughAction(Player &player) override;

@@ -14,10 +14,12 @@ public:
 
     void move();
 
-    void changeCredit(int changeBy);
+    void addCredit(unsigned value);
+    void decCredit(unsigned value);
+
     bool isBankrupt();
-    int getCredit();
-    std::string getName();
+    int getCredit() const;
+    std::string getName() const;
 
 private:
     Die die;

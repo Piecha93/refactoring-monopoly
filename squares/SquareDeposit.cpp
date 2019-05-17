@@ -9,12 +9,12 @@
 void SquareDeposit::standOnAction(Player &player) {
   std::cout << "Player " << player.getName() << " took " << depositValue << " from deposit" << std::endl;
 
-  player.changeCredit(depositValue);
+  player.addCredit(depositValue);
   depositValue = 0;
 }
 
 void SquareDeposit::goThroughAction(Player &player) {
   std::cout << "Player " << player.getName() << " paid " << 200 << " to deposit" << std::endl;
-  player.changeCredit(-200);
+  player.decCredit(200);
   depositValue += 200;
 }
