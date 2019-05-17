@@ -28,7 +28,7 @@ void MonopolyGame::gameLoop() {
 //  while (players.size() > 1)
   for(size_t i = 0; i < 150; i++) {
     for (auto &player : players) {
-      player->move();
+      player->makeTurn();
       std::cout << std::endl;
     }
   }

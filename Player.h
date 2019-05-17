@@ -12,24 +12,29 @@ class Player {
 public:
   explicit Player(std::string name, SquareIterator squareIterator);
 
-  void move();
-
   void addCredit(unsigned value);
   void decCredit(unsigned value);
 
   bool isBankrupt();
   int getCredit() const;
   std::string getName() const;
+  void imprison(unsigned lengthOfImprisonment);
+
+  void makeTurn();
 
   virtual bool makeBuyDecision(unsigned price) = 0;
 
   virtual ~Player() {}
 
 private:
+  bool isPrisoned();
+  void move();
+
   Die die;
   SquareIterator squareIterator;
   std::string name;
   int credit;
+  unsigned timeToReleasePrison = 0;
 };
 
 #endif // REFACTORING_PLAYER_H
