@@ -20,7 +20,10 @@ public:
   bool isBankrupt();
   int getCredit() const;
   std::string getName() const;
-  bool makeBuyDecision(int value);
+
+  virtual bool makeBuyDecision(unsigned price) = 0;
+
+  virtual ~Player() {}
 
 private:
   Die die;

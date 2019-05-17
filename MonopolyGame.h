@@ -5,7 +5,8 @@
 #ifndef REFACTORING_MONOPOLYGAME_H
 #define REFACTORING_MONOPOLYGAME_H
 
-
+#include <memory>
+#include "ComputerPlayer.h"
 #include "Board.h"
 #include "Player.h"
 #include "Die.h"
@@ -15,11 +16,12 @@ public:
     MonopolyGame();
 
     void startGame();
-    void addPlayer(std::string name);
+    void addHumanPlayer(const std::string& name);
+    void addComputerPlayer(const std::string& name, const ComputerPlayerMode &mode);
 
 private:
     Board board;
-    std::vector<Player> players;
+    std::vector<std::shared_ptr<Player>> players;
 
     void gameLoop();
 

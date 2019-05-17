@@ -28,7 +28,7 @@ Board::Board() {
       ss << "name" << i;
       std::string s = ss.str();
       squares.push_back(
-          std::make_shared<SquareProperty>(ss.str(), i * 10, i * 10 / 2));
+              std::make_shared<SquareProperty>(ss.str(), i * 10, i * 10 / 2));
     }
   }
 }

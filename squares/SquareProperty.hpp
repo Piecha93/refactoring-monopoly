@@ -7,7 +7,7 @@
 
 #include "Square.h"
 
-class SquareProperty : Square {
+class SquareProperty : public Square {
 public:
   SquareProperty(const std::string &name, int value, int visitCost);
   void standOnAction(Player &player) override;
@@ -18,10 +18,12 @@ private:
   void offerPurchase(Player &player);
 
   std::string name;
-  int value;
+  int price;
   int visitCost;
-  std::shared_ptr<Player> owner;
+  Player *owner;
   bool isBought = false;
+
+  bool hasPlayerMoneyToBuy(const Player &player) const;
 };
 
 #endif // REFACTORING_SQUAREPROPERTY_HPP
