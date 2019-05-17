@@ -10,24 +10,23 @@
 
 class Player {
 public:
-    explicit Player(std::string name, SquareIterator squareIterator);
+  explicit Player(std::string name, SquareIterator squareIterator);
 
-    void move();
+  void move();
 
-    void addCredit(unsigned value);
-    void decCredit(unsigned value);
+  void addCredit(unsigned value);
+  void decCredit(unsigned value);
 
-    bool isBankrupt();
-    int getCredit() const;
-    std::string getName() const;
+  bool isBankrupt();
+  int getCredit() const;
+  std::string getName() const;
+  bool makeBuyDecision(int value);
 
 private:
-    Die die;
-    SquareIterator squareIterator;
-    std::string name;
-    int credit;
-
+  Die die;
+  SquareIterator squareIterator;
+  std::string name;
+  int credit;
 };
 
-
-#endif //REFACTORING_PLAYER_H
+#endif // REFACTORING_PLAYER_H

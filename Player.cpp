@@ -49,3 +49,7 @@ std::string Player::getName() const {
 int Player::getCredit() const {
   return credit;
 }
+
+bool Player::makeBuyDecision(int value) {
+  return true;
+}
